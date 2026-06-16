@@ -1,6 +1,6 @@
 namespace Oxide.Plugins;
 
-[Info("Disable Turrets", "&anhe", "1.0.1")]
+[Info("Disable Turrets", "&anhe", "1.0.2")]
 [Description("Prevents player turrets from targeting other players.")]
 public class DisableTurrets : RustPlugin
 {
@@ -15,7 +15,7 @@ public class DisableTurrets : RustPlugin
                 // Yours
                 entity.OwnerID == player.userID ||
                 // Team’s
-                player.Team.members.Contains(entity.OwnerID) == true
+                player.Team?.members.Contains(entity.OwnerID) == true
             )
         );
     }
@@ -29,7 +29,7 @@ public class DisableTurrets : RustPlugin
             // Yours
             entity.OwnerID == player.userID ||
             // Team’s
-            player.Team.members.Contains(entity.OwnerID) == true
+            player.Team?.members.Contains(entity.OwnerID) == true
         );
     }
 }
