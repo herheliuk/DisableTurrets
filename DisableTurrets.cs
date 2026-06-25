@@ -15,7 +15,8 @@ public class DisableTurrets : RustPlugin
                 // Yours
                 entity.OwnerID == player.userID ||
                 // Team’s
-                player.Team?.members.Contains(entity.OwnerID) == true
+                player.Team
+                    ?.members.Contains(entity.OwnerID) == true
             )
         );
     }
@@ -29,7 +30,8 @@ public class DisableTurrets : RustPlugin
             // Yours
             entity.OwnerID == player.userID ||
             // Team’s
-            player.Team?.members.Contains(entity.OwnerID) == true
+            player.Team
+                ?.members.Contains(entity.OwnerID) == true
         );
     }
 }
